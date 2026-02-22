@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useState } from 'react'
 
 const navLinks = [
@@ -18,10 +19,15 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-gray-200/80 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80">
       <nav className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-4 py-4 sm:px-6 lg:px-8" aria-label="Main navigation">
-        <Link href="/" className="flex items-center gap-2">
-          <span className="font-display text-xl font-bold tracking-tight text-primary-700 sm:text-2xl">
-            Curb Butlers
-          </span>
+        <Link href="/" className="flex items-center gap-2 shrink-0">
+          <Image
+            src="/logo.png"
+            alt="Curb Butlers"
+            width={360}
+            height={120}
+            className="h-24 w-auto sm:h-[7.5rem]"
+            priority
+          />
           <span className="rounded bg-primary-100 px-1.5 py-0.5 text-xs font-medium text-primary-800">
             Wesley Chapel, FL
           </span>
